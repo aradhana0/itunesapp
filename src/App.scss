@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./theme/themeDark";
+
+.albumContainer{
+    display: flex;
+    text-align: left;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #1f2e3c;
+
+    .imgContent{
+        margin: auto;
+        margin-top: 1em;
+        width: fit-content;
+        padding: 1em;
+        box-shadow: 1px 1px 8px grey;
+    }
+    .albumCard{
+        margin: 0.5em;
+        width: 20em;
+        background-color: #fff;
+        border-radius: 0.3em;
+    }
+    .imageDetails{
+        padding: 1em;
+        margin: auto;
+        margin-top: 1em;
+    }
+}

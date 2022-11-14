@@ -1,0 +1,25 @@
+$color-deep-blue: #005580;
+
+$themes:(
+    light: (
+      backgroundLight: #fff,
+      backgroundDark: #f7f7f8,
+      textColor: #fff,
+      textDark: #000,
+      textLight: #919394,
+      contentColor: #b9baba,  
+      iconColor: #000,
+  ),
+    dark: (
+      backgroundLight: #131b1f,
+      backgroundDark: #000,
+      textColor: #fff,
+      textDark: #fff,
+      textLight: #b9baba,
+      iconColor: #fff,
+      ),
+);
+
+@function getValue($key) {
+  @return map-get($array-map, $key);
+}
