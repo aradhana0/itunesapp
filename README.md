@@ -1,3 +1,25 @@
+Features Added:
+
+1. Scrollable Album Listing according to their categories
+2. Category Filter 
+3. Search Feature, if no matching album title, search text turn red
+4. Favourite feature
+5. Album Details on Click
+6. Reset Filter on Reset Button Click
+7. Responsiveness
+
+
+Other Planned Features :
+
+1. Theme Based Mode Switch
+2. Date Filter
+3. Improved Code with documentation 
+
+Redux Usage: For storing states of AlbumList, Category list, searchResult, and selectedCategory
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
