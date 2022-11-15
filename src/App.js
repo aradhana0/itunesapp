@@ -1,21 +1,24 @@
-import { Suspense } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
 
+import './App.scss';
 import { getiTuensAlbumList } from "./service/api";
-import { useEffect, useState } from 'react';
-import { Header } from './components/HeaderComponent/Header';
-import { Search } from './components/SearchComponent/Search';
+import { setAlbumList } from './store/albumslice';
+import Header from './components/HeaderComponent/Header';
+import { Filters } from './containers/Filters/Filters';
+import { AlbumList } from './containers/AlbumList/AlbumList';
 
 
 function App() {
-  const [ albumList, setAlbumList ] = useState([]);
+  const dispatch = useDispatch();
+  const albumList = useSelector(state => state.album.albumList)
+
 
   const getAlbumList = () => {
     getiTuensAlbumList()
     .then((res)=>{
-      console.log('album====',res.data.feed)
-      setAlbumList(res.data.feed)
+      dispatch(setAlbumList(res.data.feed))
     })
   }
 
@@ -23,38 +26,22 @@ function App() {
     getAlbumList()
   },[])
 
-  const AlbumList = () => {
-    return albumList.entry.map(album => {
-      return (
-        <div key={album.id.attributes['im:id']} className={'albumCard'}>
-          <div className='imgContent'><img src={album['im:image'][2].label} alt={'album-image'}/></div>
-          {/* <hr/> */}
-          <div  className='imageDetails'>
-          <h4 className='imageTitle'> {album.title.label}</h4>
-            <p> Artist: {album['im:artist'].label}</p>
-            <p> Price: {new Date(album['im:releaseDate'].label).toDateString()}</p>
-            <p> Price: {album['im:price'].label}</p>
-          </div>
-        </div>
-      )
-    })
-  }
+  
 
 
   return (
     <div className="App">
       {albumList.author && 
       <>
-      <Header author={albumList.author} icon={albumList.icon.label}>
-          <Search/>
-        </Header>
-        <Suspense fallback={<div>Loading...</div>}>
-        <div className={'albumContainer'}>
-          <AlbumList/>
+        <Header author={albumList.author} icon={albumList.icon.label}/>
+        <div>
+          <Filters/>
         </div>
-        </Suspense>
-        </>
-        }
+        <div className={'albumContainer'}>
+          <AlbumList albumList={albumList}/>
+        </div>
+      </>
+      }
     </div>
     
   );
