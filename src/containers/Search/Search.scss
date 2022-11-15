@@ -1,16 +1,26 @@
 .SearchContainer{
     align-self: center;
     margin-inline-start: auto;
-
     box-sizing: border-box;
 
     .inputContainer{
         padding: 10px;
-        // width: 100%;
+        
         .inputBox{
             padding: inherit;
             border-radius: 5px;
-            // width: 100%;
+            width: 100%;
         }
+        .red{
+            color:red;
+        }
+    }
+
+    
+}
+@media screen and (max-width: 767px) {
+    .SearchContainer{
+        width: 100%;
+
     }
 }

@@ -1,0 +1,74 @@
+.modalAlbumContainer{
+    position: relative;
+    .modalImageContent{
+        font-size: 0.8em;
+        padding: 1em;
+        display: table;
+        position: absolute;
+        z-index: 100;
+        background: #0e1e2c;
+        bottom: 0px;
+        width: 94%;
+        margin: auto;
+        border-radius: 1em 1em;
+    }
+    .closeBtn{
+        float: right;
+    }
+
+}
+
+.albumContainer{
+    text-align: left;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: #fff;
+    padding: 1em;
+
+    .categoryName{
+        padding: 1em 0 0;
+        font-size: 1.2em;
+    }
+    .imgContent{
+        margin: auto;
+        margin-top: 1em;
+        width: fit-content;
+        padding: 1em;
+        text-align: center;
+    }
+    .albumCard{
+        margin: 0.5em;
+        min-width: 20em;
+        border-radius: 0.3em;
+        box-shadow: 1px 1px 8px grey;
+        
+    }
+    .imageDetails{
+        margin: auto;
+        margin-top: 1em;
+    }
+    .imageTitle{
+        font-size: 0.8em;
+        margin-top: 0.5em;
+    }
+    .categoriesContainer{
+        display: flex;
+        overflow: auto;
+    }
+    .addToFavourite{
+        margin: 0.3em;
+        background-color: #1f2e3c;
+        border: #1f2e3c;
+        position: absolute;
+    }
+    
+
+    @media screen and (max-width: 420px) {
+        .albumCard{
+            margin: 0.5em;
+            min-width: 15em;
+            border-radius: 0.3em;
+            box-shadow: 1px 1px 8px grey;
+        }
+    }
+}

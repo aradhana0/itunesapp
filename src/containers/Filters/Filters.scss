@@ -1,0 +1,12 @@
+.categoryFilterContainer{
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 2em;
+
+    .dropdownFilter{
+        justify-content: start;
+        padding: 0 2em;
+    }
+}
